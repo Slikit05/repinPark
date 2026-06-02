@@ -1,0 +1,33 @@
+@use "../tools/functions" as *;
+
+.mob-menu {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .mob-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    z-index: 100;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mob-menu {
+  }
+}

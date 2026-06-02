@@ -1,0 +1,88 @@
+extends ../layouts/base.pug
+
+block vars
+  -
+    const heroData = {
+      img: 'img/hero.png',
+      title: 'Квартиры в ЖК «Репин-парк» от НСИ-Юг в Краснодаре',
+      text: 'Ваш семейный оазис в центре Краснодара',
+      badges: ['Сдача: 2026', 'Двор без машин', 'Школа и детский сад - в соседнем дворе'],
+    }
+
+    const introCards = [
+      { img: 'img/intro-1.jpg', title: 'Школа и детский сад рядом', text: 'В соседнем дворе - удобно и безопасно для детей' },
+      { img: 'img/intro-2.jpg', title: 'Двор без машин', text: 'Закрытая территория для прогулок и игр' },
+      { img: 'img/intro-3.jpg', title: 'Поземный паркинг', text: 'Машины не мешают двору и детским зонам' },
+      { img: 'img/intro-4.jpg', title: 'Центр Краснодара', text: 'Все в шаговой доступности' },
+      { img: 'img/intro-5.jpg', title: 'Современные планировки', text: 'Функциональные квартиры для семей' },
+      { img: 'img/intro-6.jpg', title: 'Надежный застройщик', text: 'НСИ-ЮГ строит по 214-ФЗ' },
+    ]
+
+    const apartmentCards = [
+      { img: 'img/apartment-1.png', title: '1-комн. квартира, литер 3, 12эт', area: '38.4 м²', price: '2 990 470 руб.', priceValue: 2990470, rooms: '1', type: 'flat' },
+      { img: 'img/apartment-2.png', title: '1-комн. квартира, литер 3, 12эт', area: '88.4 м²', price: '4 990 470 руб.', priceValue: 4990470, rooms: '1', type: 'flat' },
+      { img: 'img/apartment-3.png', title: '2-комн. квартира, литер 3, 12эт', area: '38.4 м²', price: '6 990 470 руб.', priceValue: 6990470, rooms: '2', type: 'flat' },
+      { img: 'img/apartment-1.png', title: '1-комн. квартира, литер 3, 12эт', area: '88.4 м²', price: '3 500 000 руб.', priceValue: 3500000, rooms: '1', type: 'flat' },
+      { img: 'img/apartment-3.png', title: '3-комн. квартира, литер 3, 12эт', area: '88.4 м²', price: '4 990 470 руб.', priceValue: 4990470, rooms: '3', type: 'flat' },
+      { img: 'img/apartment-2.png', title: '1-комн. квартира, литер 3, 12эт', area: '58.4 м²', price: '7 333 444 руб.', priceValue: 7333444, rooms: '1', type: 'flat' },
+      { img: 'img/apartment-1.png', title: '2-комн. квартира, литер 3, 12эт', area: '98.4 м²', price: '4 990 470 руб.', priceValue: 4990470, rooms: '2', type: 'flat' },
+    ]
+
+    const aboutStats = [
+      { name: 'Общая площадь квартир', value: '76 418 м²' },
+      { name: 'Количество литеров', value: '3 литера' },
+      { name: 'Количество этажей', value: 'от 12 до 21' },
+      { name: 'Количество квартир', value: '1 416' },
+      { name: 'Площадь квартир', value: 'от 35 м² до 124.78 м²' },
+      { name: 'Парковочных мест', value: '318' },
+      { name: 'Окончание строительства', value: 'IV квартал 2026 года' },
+    ]
+
+    const mortgageItems = [
+      { title: 'Семейная ипотека' },
+      { title: 'Господдержка' },
+      { title: 'IT-ипотека' },
+      { title: 'Материнский капитал' },
+      { title: 'Рассрочка' },
+      { title: 'Военная ипотека' },
+    ]
+
+    const infrastructureItems = [
+      { img: 'img/infrastructure-1.png', title: 'Зеленый двор', text: 'Прогулочные зоны и места отдыха внутри квартала' },
+      { img: 'img/infrastructure-2.png', title: 'Детские площадки', text: 'Безопасные сценарии для разного возраста' },
+      { img: 'img/infrastructure-3.png', title: 'Все рядом', text: 'Школа, детский сад и городская инфраструктура рядом с домом' },
+      { img: 'img/yard.png', title: 'Двор без машин', text: 'Парковка вынесена из прогулочной зоны' },
+    ]
+
+    const reviews = [
+      { img: 'img/review-1.png', name: 'Анна', text: 'Понравилось расположение и то, что двор закрыт от машин. Подбор квартиры прошел спокойно.' },
+      { img: 'img/review-2.png', name: 'Игорь', text: 'Сравнили несколько планировок и ипотеку. Получилось быстро понять реальный бюджет.' },
+      { img: 'img/review-3.png', name: 'Мария', text: 'Искали вариант для семьи. Репин-парк оказался удобным по инфраструктуре и срокам.' },
+    ]
+
+    const developerFacts = [
+      { number: 'С 2009 года', label: 'работаем с проектами НСИ-Юг' },
+      { number: '700+ квартир', label: 'продано в домах застройщика' },
+      { number: '2-3 варианта', label: 'подбираем по бюджету и задаче' },
+    ]
+
+    const faqItems = [
+      { question: 'Какие квартиры доступны в Репин-парк?', answer: 'В подборке есть квартиры разной комнатности и площади. Актуальные цены и остатки лучше уточнять на момент обращения.' },
+      { question: 'Можно ли купить квартиру в ипотеку?', answer: 'Да, доступны ипотечные программы, рассрочка и сценарии с материнским капиталом.' },
+      { question: 'Есть ли парковка?', answer: 'В проекте предусмотрен подземный паркинг, чтобы двор оставался зоной прогулок и отдыха.' },
+      { question: 'Как получить планировки?', answer: 'Оставьте телефон, и мы отправим 2-3 подходящих варианта в MAX или Telegram.' },
+    ]
+
+block body
+  main.page
+    +hero(heroData)
+    +introSection(introCards)
+    +apartmentSection(apartmentCards)
+    +consultantBlock()
+    +aboutSection(aboutStats)
+    +mortgageSection(mortgageItems)
+    +infrastructureSection(infrastructureItems)
+    +reviewsSection(reviews)
+    +faqSection(faqItems)
+    +mapSection()
+    +partnerSection(developerFacts)

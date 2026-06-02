@@ -1,0 +1,65 @@
+@use "../tools/functions" as *;
+
+.new-button {
+  border: none;
+  outline: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+  min-height: 56px;
+  padding: 16px 24px;
+  background-color: transparent;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 4px;
+  transition: 0.3s color ease-out, 0.3s border ease-out,
+    0.3s background-color ease-out;
+
+  * {
+    pointer-events: none;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:disabled,
+  .disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &-theme--green {
+    background-color: color('green', 'dark');
+    color: color('white');
+
+    &:hover {
+      background-color: color('green');
+    }
+  }
+
+  &-theme--light {
+    background-color: color('green', 'light');
+    color: color('dark');
+
+    &:hover {
+      background-color: color('white');
+    }
+  }
+
+  &-theme--outline {
+    border: 1px solid rgba(color('dark'), 0.2);
+    color: color('dark');
+
+    &:hover {
+      border-color: color('green');
+      color: color('green');
+    }
+  }
+}

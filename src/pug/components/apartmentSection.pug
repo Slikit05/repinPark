@@ -1,0 +1,28 @@
+mixin apartmentSection(cards)
+  section.apartments#apartments
+    .apartments__inner.container
+      .section-head
+        h2.section-head__title Квартиры в Репин-парк
+      .apartments__filters
+        .apartments__filter-group
+          span.apartments__filter-label Тип недвижимости:
+          button.apartments__chip(type="button" data-filter="all") Все
+          button.apartments__chip.apartments__chip--active(type="button" data-filter="1") 1 комната
+          button.apartments__chip(type="button" data-filter="2") 2 комнаты
+          button.apartments__chip(type="button" data-filter="3") 3 комнаты
+          button.apartments__chip.apartments__chip--wide(type="button" data-filter="commercial") коммерческая недвижимость
+        .apartments__filter-group.apartments__filter-group--price
+          span.apartments__filter-label Стоимость:
+          input.apartments__input(type="text" placeholder="от" inputmode="numeric" data-price-min)
+          span.apartments__dash
+          input.apartments__input(type="text" placeholder="до" inputmode="numeric" data-price-max)
+      .apartments__line
+      .apartments__slider-wrap
+        +sliderNav('apartments__nav')
+        .swiper.apartments__slider.js-apartments-slider
+          .swiper-wrapper
+            each card in cards
+              .swiper-slide
+                +apartmentCard(card)
+        p.apartments__empty.js-apartments-empty Ничего не найдено
+      .apartments__line.apartments__line--bottom

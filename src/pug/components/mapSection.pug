@@ -1,0 +1,12 @@
+mixin mapSection()
+  section.location#location
+    .location__inner.container
+      .section-head.location__head
+        h2.section-head__title Как добраться
+      .location__layout
+        .location__info
+          span.location__label Адрес
+          p.location__address Краснодар, ул. Лизюкова, 16
+          p.location__text Построим маршрут до офиса продаж и покажем расположение на карте.
+          +button({ text: 'проложить маршрут', theme: 'green', href: 'https://yandex.ru/maps/?rtext=~Краснодар, улица Лизюкова, 16', className: 'location__button', attrs: { target: '_blank', rel: 'noopener' } })
+        .location__map.js-yandex-map(data-address="Краснодар, улица Лизюкова, 16" data-title="ЖК Репин-парк")

@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use '../../settings/colors';
+
+@function color($color, $tone: 'base') {
+  @return map.get(map.get(colors.$colors, #{$color}), #{$tone});
+}

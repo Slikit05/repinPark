@@ -1,0 +1,27 @@
+mixin header()
+  -
+    const navItems = [
+      { text: 'Жилые комплексы НСИ-ЮГ', href: '#about' },
+      { text: 'Квартиры', href: '#apartments' },
+      { text: 'Коммерческая недвижимость', href: '#contacts' },
+      { text: 'Ипотека', href: '#mortgage' },
+      { text: 'Инфраструктура', href: '#infrastructure' },
+      { text: 'Отзывы', href: '#reviews' },
+      { text: 'О застройщике', href: '#developer' },
+    ]
+
+  header.site-header
+    .site-header__top.container
+      a.site-header__logo(href="/")
+        span.site-header__logo-accent Город
+        |  Новостроек
+      .site-header__contacts
+        a.site-header__phone(href="tel:+71234567890") +7 (123) 456 78 90
+        a.site-header__callback(href="#contacts") заказать звонок
+        a.site-header__social.site-header__social--max(href="#contacts" aria-label="MAX")
+        a.site-header__social.site-header__social--tg(href="#contacts" aria-label="Telegram")
+    nav.site-header__nav.container(aria-label="Главная навигация")
+      ul.site-header__list
+        each item in navItems
+          li.site-header__item
+            a.site-header__link(href=item.href)= item.text

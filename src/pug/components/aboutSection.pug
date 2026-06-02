@@ -1,0 +1,13 @@
+mixin aboutSection(stats)
+  section.about#about
+    .about__inner.container
+      .about__text-col
+        h2.about__title О жилом комплексе
+        p.about__text Жилой комплекс по ул. Репина, 3/1 от строительной компании «Нефтестройиндустрии-Юг» расположен в Прикубанском округе города Краснодара, в микрорайоне Репина. Класс жилья - комфорт.
+        p.about__text Жилье здесь относится к комфорт-классу - это говорит о качестве и том, что забота о вас и ваших малышах является одним из приоритетов проекта.
+        p.about__text.about__text--accent Подходит для инвестирования и сохранения капитала.
+      dl.about__stats
+        each item in stats
+          div.about__stat
+            dt.about__stat-name= item.name
+            dd.about__stat-value= item.value

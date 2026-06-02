@@ -1,0 +1,85 @@
+@use "../tools/functions" as *;
+
+.accordion {
+  border-bottom: 1px solid #CECECE;
+
+  &:first-child {
+    border-top: 1px solid #CECECE;
+  }
+
+  &__up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 0 18px;
+    cursor: pointer;
+
+    &.is-active {
+      .accordion__icon {
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &__caption {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  &__icon {
+    height: 32px;
+    width: 32px;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 20px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 1px);
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  &__content {
+    padding: 0 0 58px;
+
+    p {
+      margin: 0 0 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .accordion {
+    &__caption {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+}

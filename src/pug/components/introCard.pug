@@ -1,0 +1,6 @@
+mixin introCard(item)
+  article.intro-card
+    +picture(item.img, item.title, 'intro-card__picture')
+    .intro-card__body
+      h3.intro-card__title= item.title
+      p.intro-card__text= item.text

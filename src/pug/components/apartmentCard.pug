@@ -1,0 +1,17 @@
+mixin apartmentCard(card)
+  article.apartment-card(data-type=card.type data-rooms=card.rooms data-price=card.priceValue)
+    .apartment-card__media
+      +picture(card.img, card.title, 'apartment-card__picture')
+    .apartment-card__content
+      h3.apartment-card__title= card.title
+      .apartment-card__params
+        if card.area
+          .apartment-card__param
+            span.apartment-card__label Общая площадь
+            span.apartment-card__value= card.area
+        else
+          .apartment-card__param.apartment-card__param--empty
+        .apartment-card__param
+          span.apartment-card__label Цена
+          span.apartment-card__value= card.price
+      +button({ text: 'Подобрать квартиру', theme: 'green', href: '#contacts', className: 'apartment-card__button' })

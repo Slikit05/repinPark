@@ -1,0 +1,12 @@
+mixin hero(data)
+  section.hero
+    picture.hero__picture
+      img.hero__image(src=data.img alt="" loading="eager")
+    .hero__overlay
+    .hero__inner.container
+      h1.hero__title= data.title
+      p.hero__text= data.text
+      ul.hero__badges
+        each badge in data.badges
+          li.hero__badge= badge
+      +button({ text: 'получить планировки и цены', theme: 'green', href: '#apartments', className: 'hero__button' })

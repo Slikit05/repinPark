@@ -1,0 +1,10 @@
+mixin introSection(items)
+  section.intro
+    .intro__inner.container
+      h2.intro__title Почему «Репин-парк» выбирают семьи
+      .intro__cards
+        each item in items
+          +introCard(item)
+      .intro__bottom
+        p.intro__note Подберем 2-3 варианта под Ваш бюджет
+        +button({ text: 'Подобрать квартиру', theme: 'green', href: '#apartments', className: 'intro__button' })

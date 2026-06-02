@@ -1,0 +1,29 @@
+include ../components/import
+
+block vars
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    block styles
+      link(href="css/normalize.css" rel="stylesheet")
+      link(href="vendor/css/fancybox.min.css" rel="stylesheet")
+      link(href="vendor/css/swiper-bundle.min.css" rel="stylesheet")
+      link(href="css/style.css" rel="stylesheet")
+    title= title || 'ЖК Репин-парк'
+
+  body
+    +header()
+    +mobMenu()
+
+    block body
+
+    +footer()
+    block scripts
+      script(src="vendor/js/swiper-bundle.min.js")
+      script(src="https://api-maps.yandex.ru/2.1/?apikey=fc075a8b-9c59-4b8d-b8cb-0172442a14a7&lang=ru_RU")
+      script(src="js/accordion.js")
+      script(src="js/landing.js")
+      script(src="js/map.js")

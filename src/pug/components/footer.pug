@@ -1,0 +1,16 @@
+mixin footer()
+  footer.site-footer#contacts
+    .site-footer__inner.container
+      .site-footer__col
+        span.site-footer__label Адрес
+        p.site-footer__address Краснодар, ул. Лизюкова, 16
+      .site-footer__col
+        span.site-footer__label Телефон
+        a.site-footer__phone(href="tel:+78611234567") +7 (861) 123-45-67
+      .site-footer__socials
+        a.site-footer__social.site-footer__social--max(href="#") Whatsapp
+        a.site-footer__social.site-footer__social--tg(href="#") Telegram
+      +button({ text: 'Написать сообщение', theme: 'green', href: '#', className: 'site-footer__button' })
+    .site-footer__bottom.container
+      p.site-footer__copy © 2026 Город Новостроек
+      a.site-footer__policy(href="#") Политика конфиденциальности

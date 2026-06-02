@@ -1,0 +1,14 @@
+mixin mortgageSection(items)
+  section.mortgage#mortgage
+    .mortgage__inner.container
+      h2.mortgage__title Ипотека
+      .mortgage__layout
+        .mortgage__cards
+          each item in items
+            article.mortgage-card
+              .mortgage-card__icon
+              h3.mortgage-card__title= item.title
+        .mortgage__content
+          p.mortgage__text Жилой комплекс можно купить с привлечением ипотечного кредитования, рассрочки платежа или материнского капитала.
+          p.mortgage__text Мы подберём программу под Ваш бюджет и покажем варианты с комфортным ежемесячным платежом.
+          +button({ text: 'получить консультацию', theme: 'green', href: '#contacts', className: 'mortgage__button' })

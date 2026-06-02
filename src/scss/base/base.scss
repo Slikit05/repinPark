@@ -1,0 +1,185 @@
+@use "../tools/functions" as *;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+
+  &.is-hidden {
+    overflow: hidden;
+  }
+}
+
+html *,
+html *::before,
+html *::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 4px solid rgba($color: #1e439b, $alpha: 0.3);
+}
+
+body {
+  min-width: 320px;
+
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: color('dark');
+  background-color: color('white');
+
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  font-style: normal;
+  max-width: 100%;
+  width: 100%;
+}
+
+section, div {
+  scroll-margin-top: 85px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+figure {
+  margin-inline: 0;
+}
+
+h1:not([class]),
+h2:not([class]),
+h3:not([class]),
+h4:not([class]),
+h5:not([class]),
+h6:not([class]) {
+  line-height: 1;
+  font-weight: 500;
+}
+
+input,
+textarea,
+a,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea {
+  max-width: 100%;
+  width: 100%;
+}
+
+a:not([class]) {
+  font-family: inherit;
+  font-style: inherit;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #818285;
+  }
+}
+
+button {
+  border: 0;
+}
+
+.page {
+  overflow: hidden;
+}
+
+address {
+  font-style: normal;
+  font-family: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+b:not([class]) {
+  font-weight: 500;
+  color: #000;
+}
+
+table:not([class]) {
+  border-collapse: collapse;
+  border-spacing: 0;
+  min-width: 100%;
+
+  caption {
+    caption-side: bottom;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(176, 163, 147, 0.2);
+  }
+
+  /* Эффект при наведении на строку */
+  tr {
+    transition: background-color 0.3s ease;
+  }
+
+  tr:hover {
+    background-color: rgba(176, 163, 147, 0.4);
+    cursor: pointer;
+  }
+
+  /* Для сохранения эффекта при наведении на четные строки */
+  tr:nth-child(even):hover {
+    background-color: rgba(176, 163, 147, 0.5);
+  }
+
+  th {
+    vertical-align: middle;
+    text-align: left;
+    padding: 1em 2em;
+    border: 1px solid rgba(176, 163, 147, 0.2);
+    background-color: rgba(176, 163, 147, 0.1);
+    font-weight: 600;
+  }
+
+  td {
+    vertical-align: middle;
+    padding: 1em 2em;
+    border: 1px solid rgba(176, 163, 147, 0.2);
+    transition: background-color 0.3s ease;
+  }
+}
+
+.is-hidden {
+  overflow: hidden;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
