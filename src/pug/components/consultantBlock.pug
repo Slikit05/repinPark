@@ -1,11 +1,4 @@
 mixin consultantBlock()
-  section.consult
-    .consult__inner.container
-      .consult__box
-        h2.consult__title У Вас еще есть вопросы?
-        p.consult__text Получите консультацию, планировки и актуальные цены. Специалист подберет варианты и объяснит условия покупки простым языком.
-        form.consult__form(action="#")
-          label.consult__field
-            span.consult__label Телефон
-            input.consult__input(type="tel" placeholder="+7 (___) ___-__-__")
-          +button({ text: 'получить консультацию', theme: 'green', className: 'consult__button' })
+  +callbackForm({ className: 'consult', img: 'img/complex-plan.png' })
+    h2.callback-form__title У Вас еще есть вопросы?
+    p.callback-form__text Заполните простую форму и мы перезвоним в ближайщее время

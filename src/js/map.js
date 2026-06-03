@@ -5,35 +5,81 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const address = mapElement.dataset.address || "Краснодар, улица Лизюкова, 16";
-  const title = mapElement.dataset.title || "ЖК Репин-парк";
-  const fallbackCoords = [45.0827, 38.9768];
+  const fallbackPoints = [
+    {
+      category: "Инфраструктура",
+      title: "Объект",
+      address: "Адрес объекта",
+      coords: [45.0648, 38.9558],
+      markerIcon: "img/svg/map-marker-kindergarten.svg",
+      balloon: "Описание объекта",
+    },
+  ];
+
+  const getPoints = () => {
+    try {
+      const points = JSON.parse(mapElement.dataset.points || "[]");
+
+      return Array.isArray(points) && points.length ? points : fallbackPoints;
+    } catch (error) {
+      return fallbackPoints;
+    }
+  };
+
+  const getCenter = (points) => {
+    const totals = points.reduce(
+      (acc, point) => {
+        acc.lat += Number(point.coords?.[0] || 0);
+        acc.lng += Number(point.coords?.[1] || 0);
+        return acc;
+      },
+      { lat: 0, lng: 0 }
+    );
+
+    return [totals.lat / points.length, totals.lng / points.length];
+  };
+
+  const getBalloonContent = (point) => `
+    <div class="map-balloon">
+      <strong class="map-balloon__title">${point.title || point.category}</strong>
+      <span class="map-balloon__address">${point.address || ""}</span>
+      <p class="map-balloon__text">${point.balloon || ""}</p>
+    </div>
+  `;
 
   ymaps.ready(() => {
-    ymaps.geocode(address, { results: 1 }).then((response) => {
-      const firstGeoObject = response.geoObjects.get(0);
-      const coords = firstGeoObject ? firstGeoObject.geometry.getCoordinates() : fallbackCoords;
+    const points = getPoints();
+    const map = new ymaps.Map(mapElement, {
+      center: getCenter(points),
+      zoom: 15,
+      controls: ["zoomControl", "fullscreenControl"],
+    });
 
-      const map = new ymaps.Map(mapElement, {
-        center: coords,
-        zoom: 16,
-        controls: ["zoomControl", "fullscreenControl"],
-      });
-
+    points.forEach((point) => {
       const placemark = new ymaps.Placemark(
-        coords,
+        point.coords,
         {
-          balloonContentHeader: title,
-          balloonContentBody: address,
-          hintContent: title,
+          balloonContent: getBalloonContent(point),
+          hintContent: point.title || point.category,
         },
         {
-          preset: "islands#greenHomeIcon",
+          iconLayout: "default#image",
+          iconImageHref: point.markerIcon || "img/svg/map-marker-kindergarten.svg",
+          iconImageSize: [40, 46],
+          iconImageOffset: [-20, -46],
         }
       );
 
       map.geoObjects.add(placemark);
-      map.behaviors.disable("scrollZoom");
     });
+
+    if (points.length > 1) {
+      map.setBounds(map.geoObjects.getBounds(), {
+        checkZoomRange: true,
+        zoomMargin: 48,
+      });
+    }
+
+    map.behaviors.disable("scrollZoom");
   });
 });

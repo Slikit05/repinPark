@@ -1,0 +1,109 @@
+@use "../tools/functions" as *;
+
+.hero {
+  position: relative;
+  min-height: 904px;
+  color: color('white');
+
+  &__picture,
+  &__image,
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__overlay {
+    background:
+      linear-gradient(180deg, rgba(2, 9, 74, 0.5) 0%, rgba(29, 29, 27, 0) 27%),
+      linear-gradient(0deg, rgba(29, 29, 27, 0.4) 0%, rgba(29, 29, 27, 0) 57%);
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 507px;
+    padding-bottom: 64px;
+  }
+
+  &__title {
+    max-width: 864px;
+    margin: 0 0 21px;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+  }
+
+  &__text {
+    max-width: 736px;
+    margin: 0 0 40px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__badge {
+    min-height: 40px;
+    padding: 8px 16px 8px 44px;
+    position: relative;
+    border-radius: 4px;
+    background-color: rgba(color('green', 'deep'), 0.8);
+    font-size: 16px;
+    line-height: 24px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 12px;
+      height: 8px;
+      border-left: 2px solid color('white');
+      border-bottom: 2px solid color('white');
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__button {
+    min-width: 369px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    min-height: 760px;
+
+    &__inner {
+      padding-top: 300px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &__button {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+}

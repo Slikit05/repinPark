@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 49">
+<path id="Union" d="M40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20Z" fill="var(--fill-0, #92010A)"/>
+<g id="Group">
+<path id="Vector" d="M30.908 18.4312L32 18.1421L31.9839 16.8064L20.7912 13.1007C20.4033 12.9664 19.9815 12.9664 19.5962 13.1007L8 16.8064L8.01615 18.1421L19.7641 22.0821C20.0967 22.1969 20.4586 22.1969 20.7891 22.0821L28.5682 19.3496" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10"/>
+<path id="Vector_2" d="M20.4653 16.7927L28.3993 19.2762C28.9264 19.4221 29.908 19.8335 29.908 20.8757V23.9379V27.0001" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10"/>
+<path id="Vector_3" d="M13.6873 20.3652V24.9585C13.6873 26.0859 16.4887 27 19.944 27C23.3992 27 26.2006 26.0859 26.2006 24.9585V20.3652" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10"/>
+</g>
+</g>
+</svg>

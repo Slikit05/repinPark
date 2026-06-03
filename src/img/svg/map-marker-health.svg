@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 46">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M23.0647 39.7667C32.6556 38.2918 40 30.0036 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 29.9645 7.2872 38.2271 16.8231 39.7491L19.7647 46L23.0647 39.7667Z" fill="var(--fill-0, #9B51E0)"/>
+<g id="Group">
+<path id="Vector" d="M20.2733 16.1151C18.8008 16.1151 17.6072 14.8858 17.6072 13.1724C17.6072 11.9725 18.5621 11 19.7401 11C20.6821 11 21.4465 11.672 21.4465 12.632C21.4465 13.3996 20.88 13.9864 20.0818 13.8957" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path id="Vector_2" d="M16.9737 19.7118V20.8045" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M22.8745 19.7118V20.8045" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M23.411 23.4931C22.7147 24.5541 21.4138 25.2682 19.9241 25.2682C18.4344 25.2682 17.1341 24.5547 16.4378 23.4936" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M16.1057 14.6874C13.8886 15.9217 12.3507 18.1973 12.172 20.8389C12.0755 20.8209 11.9784 20.8045 11.8775 20.8045C10.8406 20.8045 10 21.7831 10 22.99C10 24.1969 10.8406 25.1754 11.8775 25.1754C12.2863 25.1754 12.6613 25.0197 12.9692 24.7618C14.2448 27.2724 16.8761 29 19.9241 29" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M23.8943 14.6874C26.1114 15.9217 27.6493 18.1973 27.828 20.8389C27.9245 20.8209 28.0216 20.8045 28.1225 20.8045C29.1594 20.8045 30 21.7831 30 22.99C30 24.1969 29.1594 25.1754 28.1225 25.1754C27.7137 25.1754 27.3387 25.0197 27.0308 24.7618C25.7552 27.2724 23.1239 29 20.0759 29" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,23 @@
+mixin callbackForm(options)
+  -
+    const sectionClass = options.className || ''
+    const img = options.img || ''
+    const alt = options.alt || ''
+
+  section.callback-form(class=sectionClass)
+    +picture(img, alt, 'callback-form__picture')
+    .callback-form__inner.container
+      .callback-form__box
+        block
+        form.callback-form__form(action="#")
+          label.callback-form__field
+            input.callback-form__input(type="text" name="name" placeholder="Ваше имя")
+          label.callback-form__field
+            input.callback-form__input(type="tel" name="phone" placeholder="Телефон")
+          label.callback-form__agreement
+            input.callback-form__checkbox(type="checkbox" name="agreement" checked)
+            span.callback-form__checkbox-view
+            span.callback-form__agreement-text
+              | Я согласен с 
+              a.callback-form__agreement-link(href="#") Политикой конфиденциальности
+          +button({ text: 'получить консультацию', theme: 'green', className: 'callback-form__button', attrs: { type: 'submit' } })

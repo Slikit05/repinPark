@@ -6,16 +6,18 @@ mixin apartmentSection(cards)
       .apartments__filters
         .apartments__filter-group
           span.apartments__filter-label Тип недвижимости:
-          button.apartments__chip(type="button" data-filter="all") Все
-          button.apartments__chip.apartments__chip--active(type="button" data-filter="1") 1 комната
-          button.apartments__chip(type="button" data-filter="2") 2 комнаты
-          button.apartments__chip(type="button" data-filter="3") 3 комнаты
-          button.apartments__chip.apartments__chip--wide(type="button" data-filter="commercial") коммерческая недвижимость
+          .apartments__flex
+            button.apartments__chip(type="button" data-filter="all") Все
+            button.apartments__chip.apartments__chip--active(type="button" data-filter="1") 1 комната
+            button.apartments__chip(type="button" data-filter="2") 2 комнаты
+            button.apartments__chip(type="button" data-filter="3") 3 комнаты
+            button.apartments__chip.apartments__chip--wide(type="button" data-filter="commercial") коммерческая недвижимость
         .apartments__filter-group.apartments__filter-group--price
           span.apartments__filter-label Стоимость:
-          input.apartments__input(type="text" placeholder="от" inputmode="numeric" data-price-min)
-          span.apartments__dash
-          input.apartments__input(type="text" placeholder="до" inputmode="numeric" data-price-max)
+          .apartments__flex
+            input.apartments__input(type="text" placeholder="от" inputmode="numeric" data-price-min)
+            span.apartments__dash
+            input.apartments__input(type="text" placeholder="до" inputmode="numeric" data-price-max)
       .apartments__line
       .apartments__slider-wrap
         +sliderNav('apartments__nav')

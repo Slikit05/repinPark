@@ -1,16 +1,29 @@
 mixin footer()
   footer.site-footer#contacts
     .site-footer__inner.container
-      .site-footer__col
-        span.site-footer__label Адрес
-        p.site-footer__address Краснодар, ул. Лизюкова, 16
-      .site-footer__col
-        span.site-footer__label Телефон
-        a.site-footer__phone(href="tel:+78611234567") +7 (861) 123-45-67
-      .site-footer__socials
-        a.site-footer__social.site-footer__social--max(href="#") Whatsapp
-        a.site-footer__social.site-footer__social--tg(href="#") Telegram
-      +button({ text: 'Написать сообщение', theme: 'green', href: '#', className: 'site-footer__button' })
-    .site-footer__bottom.container
-      p.site-footer__copy © 2026 Город Новостроек
-      a.site-footer__policy(href="#") Политика конфиденциальности
+      .site-footer__top
+        .site-footer__col
+          span.site-footer__label Адрес
+          p.site-footer__address Краснодар, ул. Лизюкова, 16
+        .site-footer__col
+          span.site-footer__label Телефон
+          a.site-footer__phone(href="tel:+78611234567") +7 (861) 123-45-67
+        .site-footer__socials
+          a.site-footer__social(href="#" aria-label="Whatsapp")
+            span.site-footer__social-icon.site-footer__social-icon--max
+              img(src="img/svg/footer-max.svg" alt="")
+            span.site-footer__social-text Whatsapp
+          a.site-footer__social(href="#" aria-label="Telegram")
+            img.site-footer__social-icon(src="img/svg/footer-telegram.svg" alt="")
+            span.site-footer__social-text Telegram
+        +button({ text: 'написать сообщение', theme: 'green', href: '#', className: 'site-footer__button', svgIconEnd: 'img/svg/footer-button-send.svg' })
+      .site-footer__bottom
+        p.site-footer__copy
+          span © 2026 
+          b Город новостроек
+          span . Все права защищены.
+        a.site-footer__policy(href="#") Политика конфиденциальности
+        a.site-footer__made(href="#" aria-label="Very Good")
+          span Создание сайта — 
+          b Very Good
+          img(src="img/svg/footer-very-good.svg" alt="")

@@ -1,27 +1,45 @@
 mixin header()
   -
     const navItems = [
-      { text: 'Жилые комплексы НСИ-ЮГ', href: '#about' },
+      {
+        text: 'Жилые комплексы НСИ-ЮГ',
+        href: '#about',
+        dropdown: [
+          { text: 'Жилой комплекс', href: '#about' },
+          { text: 'Жилой комплекс', href: '#apartments' },
+          { text: 'Жилой комплекс', href: '#developer' },
+        ],
+      },
       { text: 'Квартиры', href: '#apartments' },
       { text: 'Коммерческая недвижимость', href: '#contacts' },
       { text: 'Ипотека', href: '#mortgage' },
-      { text: 'Инфраструктура', href: '#infrastructure' },
+      { text: 'Инфраструктура', href: '#location' },
       { text: 'Отзывы', href: '#reviews' },
       { text: 'О застройщике', href: '#developer' },
     ]
 
   header.site-header
     .site-header__top.container
-      a.site-header__logo(href="/")
-        span.site-header__logo-accent Город
-        |  Новостроек
+      a.site-header__logo(href="/") Город Новостроек
       .site-header__contacts
         a.site-header__phone(href="tel:+71234567890") +7 (123) 456 78 90
         a.site-header__callback(href="#contacts") заказать звонок
-        a.site-header__social.site-header__social--max(href="#contacts" aria-label="MAX")
-        a.site-header__social.site-header__social--tg(href="#contacts" aria-label="Telegram")
+        a.site-header__social(href="#contacts" aria-label="MAX")
+          img(src="img/svg/footer-max.svg" alt="")
+        a.site-header__social(href="#contacts" aria-label="Telegram")
+          img(src="img/svg/header-telegram.svg" alt="")
     nav.site-header__nav.container(aria-label="Главная навигация")
       ul.site-header__list
         each item in navItems
-          li.site-header__item
-            a.site-header__link(href=item.href)= item.text
+          li.site-header__item(class=item.dropdown ? 'site-header__item--dropdown' : '')
+            a.site-header__link(href=item.href)
+              span= item.text
+              if item.dropdown
+                img.site-header__link-icon(src="img/svg/header-arrow-down.svg" alt="")
+            if item.dropdown
+              ul.site-header__dropdown
+                each child, index in item.dropdown
+                  li.site-header__dropdown-item(class=index === 2 ? 'site-header__dropdown-item--active' : '')
+                    a.site-header__dropdown-link(href=child.href)
+                      span= child.text
+                      img(src="img/svg/header-arrow-right.svg" alt="")

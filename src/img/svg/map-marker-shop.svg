@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 41">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M23.0647 39.7667C32.6556 38.2918 40 30.0036 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 29.9645 7.2872 38.2271 16.8231 39.7491L19.7647 46L23.0647 39.7667Z" fill="var(--fill-0, #2F80ED)"/>
+<g id="Group">
+<path id="Vector" d="M23.5642 13H10.9197C10.3313 13 9.89454 13.592 10.0223 14.217L11.4529 21.217C11.5467 21.675 11.9191 22 12.3503 22H23.5642" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path id="Vector_2" d="M11.612 26H21.9387C22.3552 26 22.7193 25.695 22.8268 25.258L26.3224 11H30" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path id="Vector_3" d="M23.5642 29H21.7254" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10"/>
+<path id="Vector_4" d="M13.4508 29H11.612" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10"/>
+</g>
+</g>
+</svg>

@@ -5,9 +5,14 @@ mixin faqSection(items)
       .faq__list
         each item, index in items
           .accordion.faq__item
-            button.accordion__up.faq__button(type="button" class=index === 0 ? 'is-active' : '')
+            button.accordion__up.faq__button(type="button" class=index === 2 ? 'is-active' : '')
               span.accordion__caption.faq__question= item.question
               span.accordion__icon.faq__icon
-            .accordion__dropdown.faq__dropdown(class=index === 0 ? 'is-active' : '')
+                img(src="img/svg/arrow-down.svg" alt="Развернуть")
+            .accordion__dropdown.faq__dropdown(class=index === 2 ? 'is-active' : '')
               .accordion__content.faq__answer
-                p= item.answer
+                if Array.isArray(item.answer)
+                  each paragraph in item.answer
+                    p= paragraph
+                else
+                  p= item.answer

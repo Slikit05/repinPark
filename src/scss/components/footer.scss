@@ -1,33 +1,38 @@
 @use "../tools/functions" as *;
 
 .site-footer {
-  padding: 72px 0 40px;
-  background-color: color('dark');
+  min-height: 192px;
+  padding: 32px 0 24px;
+  background-color: color('green', 'dark');
   color: color('white');
 
-  &__inner {
+  &__top {
     display: grid;
-    grid-template-columns: 1fr 1fr 280px 352px;
+    grid-template-columns: 352px 384px 280px 352px;
     gap: 32px;
     align-items: center;
   }
 
   &__label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    color: rgba(color('white'), 0.7);
     font-size: 14px;
     line-height: 20px;
-    opacity: 0.7;
+    font-weight: 300;
   }
 
   &__address,
   &__phone {
     margin: 0;
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 500;
     color: color('white');
     text-decoration: none;
+    font-weight: 500;
+  }
+
+  &__address {
+    font-size: 20px;
+    line-height: 28px;
   }
 
   &__phone {
@@ -37,10 +42,14 @@
 
   &__socials {
     display: flex;
+    align-items: center;
     gap: 28px;
   }
 
   &__social {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     color: color('white');
     font-size: 14px;
     line-height: 16px;
@@ -48,43 +57,111 @@
     text-decoration: none;
   }
 
+  &__social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+
+  &__social-icon img,
+  &__made img,
+  &__button img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__social-icon--max img {
+    width: 32px;
+    height: 32px;
+  }
+
   &__button {
-    width: 100%;
+    width: 352px;
+    background-color: color('green');
+  }
+
+  &__button img {
+    width: 18px;
+    height: 16px;
   }
 
   &__bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    margin-top: 40px;
-    padding-top: 28px;
+    display: grid;
+    grid-template-columns: 352px 352px 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 24px;
     border-top: 1px solid rgba(color('white'), 0.2);
   }
 
   &__copy,
-  &__policy {
+  &__policy,
+  &__made {
     margin: 0;
-    color: rgba(color('white'), 0.7);
     font-size: 14px;
     line-height: 20px;
+    font-weight: 400;
     text-decoration: none;
+  }
+
+  &__copy span,
+  &__made span {
+    color: #b9ecc9;
+  }
+
+  &__copy b {
+    color: color('white');
+    font-weight: 400;
+  }
+  &__policy,
+  &__made b {
+    color: color('green', 'light');
+    font-weight: 400;
+  }
+
+  &__made {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    color: #b9ecc9;
+    text-align: right;
+  }
+
+  &__made img {
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .site-footer {
-    &__inner {
+    &__top,
+    &__bottom {
       grid-template-columns: 1fr 1fr;
+    }
+
+    &__made {
+      justify-content: flex-start;
+      text-align: left;
     }
   }
 }
 
 @media screen and (max-width: 767px) {
   .site-footer {
-    padding: 48px 0 28px;
+    padding: 40px 0 28px;
 
-    &__inner {
+    &__top,
+    &__bottom {
       grid-template-columns: 1fr;
+      gap: 24px;
     }
 
     &__phone {
@@ -92,8 +169,12 @@
       line-height: 32px;
     }
 
-    &__bottom {
-      flex-direction: column;
+    &__socials {
+      flex-wrap: wrap;
+    }
+
+    &__button {
+      width: 100%;
     }
   }
 }

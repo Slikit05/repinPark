@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 53">
+<path id="Union" d="M40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20Z" fill="var(--fill-0, #56CCF2)"/>
+<g id="Group">
+<g id="Group 46">
+<path id="Vector" d="M25 10V15" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path id="Vector_2" d="M28.5789 10V15.8333C28.5789 17.0283 27.8421 17.6542 27.0859 17.9983C26.4619 18.2817 26.0964 18.9325 26.1453 19.6108L26.8947 28.3333C26.8947 29.0483 26.6842 30 24.7895 30C22.8947 30 22.6842 29.0483 22.6842 28.3333L23.4345 19.6108C23.4834 18.9333 23.1179 18.2825 22.4939 17.9983C21.7368 17.6542 21 17.0283 21 15.8333V10" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+</g>
+<path id="Vector_3" d="M17.0526 28.3334C17.0526 29.1967 16.4152 30 15.3684 30C14.3217 30 13.6842 29.1967 13.6842 28.3334V21.6667L12 20C12 20 12.6509 16.535 12.9541 14.635C13.3423 12.2017 14.9474 10.8334 16.2105 10.8334C17.0526 10.8334 17.0526 11.6667 17.0526 11.6667V28.3334Z" stroke="var(--stroke-0, white)" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

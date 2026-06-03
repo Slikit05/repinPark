@@ -1,16 +1,18 @@
 mixin reviewsSection(items)
   section.reviews#reviews
     .reviews__inner.container
-      .section-head
-        h2.section-head__title Отзывы о НСИ-ЮГ
+      h2.reviews__title Отзывы о НСИ-ЮГ
       .reviews__slider-wrap
-        +sliderNav('reviews__nav')
+        .reviews__nav
+          button.reviews__nav-button.reviews__nav-button--prev(type="button" aria-label="Предыдущий отзыв")
+            img(src="img/svg/reviews-arrow-prev.svg" alt="")
+          button.reviews__nav-button.reviews__nav-button--next(type="button" aria-label="Следующий отзыв")
+            img(src="img/svg/reviews-arrow-next.svg" alt="")
         .swiper.reviews__slider.js-reviews-slider
           .swiper-wrapper
             each item in items
               .swiper-slide
                 article.review-card
-                  +picture(item.img, item.name, 'review-card__picture')
-                  .review-card__content
-                    p.review-card__quote= item.text
-                    h3.review-card__name= item.name
+                  img.review-card__quote-icon(src="img/svg/reviews-quote.svg" alt="")
+                  h3.review-card__name= item.name
+                  p.review-card__text= item.text

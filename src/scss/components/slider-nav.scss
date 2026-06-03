@@ -1,0 +1,59 @@
+@use "../tools/functions" as *;
+
+.slider-nav {
+  pointer-events: none;
+  position: absolute;
+  inset: 50% -128px auto -128px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+
+  &__button {
+    pointer-events: auto;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: color('green');
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid color('white');
+      border-right: 2px solid color('white');
+      transform: translate(-35%, -50%) rotate(45deg);
+    }
+
+    &:hover {
+      background-color: color('green', 'dark');
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  &__button--prev::before {
+    transform: translate(-65%, -50%) rotate(-135deg);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .slider-nav {
+    inset-inline: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider-nav {
+    display: none;
+  }
+}

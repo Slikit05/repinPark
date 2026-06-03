@@ -2,12 +2,18 @@ mixin partnerSection(items)
   section.partner#developer
     .partner__inner.container
       .partner__content
-        h2.partner__title Город Новостроек - официальный партнёр НСИ-Юг
-        p.partner__text Мы хорошо знаем проекты застройщика, особенности планировок и реальную логику выбора: где удобнее для семьи, а где выгоднее условия покупки.
-        +button({ text: 'Подобрать квартиру в ЖК НСИ-Юг', theme: 'green', href: '#contacts', className: 'partner__button' })
+        h2.partner__title
+          | Город Новостроек - официальный партнёр 
+          br
+          | НСИ-Юг
+        p.partner__text Мы хорошо знаем проекты застройщика, особенности планировок и реальную логику выбора: что лучше подойдёт для семьи, где именно Вам будет удобнее по локации, а где выгоднее условия покупки.
+        p.partner__lead Подберём 2–3 подходящих варианта и объясним плюсы каждого простым языком - без давления и случайных решений.
+        +button({ text: 'подобрать квартиру в ЖК НСИ-ЮГ', theme: 'green', href: '#contacts', className: 'partner__button', svgIconEnd: 'img/svg/partner-button-phone.svg' })
       .partner__facts
         each item in items
           article.partner__fact
             span.partner__fact-icon
-            h3.partner__fact-title= item.number
-            p.partner__fact-text= item.label
+              img(src=item.icon alt="")
+            .partner__fact-content
+              h3.partner__fact-title= item.number
+              p.partner__fact-text= item.label

@@ -121,31 +121,18 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    createSlider(".js-infrastructure-slider", {
+    createSlider(".js-reviews-slider", {
       slidesPerView: 1,
-      spaceBetween: 24,
+      spaceBetween: 32,
       navigation: {
-        nextEl: ".infrastructure__nav .slider-nav__button--next",
-        prevEl: ".infrastructure__nav .slider-nav__button--prev",
+        nextEl: ".reviews__nav-button--next",
+        prevEl: ".reviews__nav-button--prev",
       },
       breakpoints: {
-        768: {
+        1024: {
           slidesPerView: 2,
           spaceBetween: 32,
         },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 32,
-        },
-      },
-    });
-
-    createSlider(".js-reviews-slider", {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      navigation: {
-        nextEl: ".reviews__nav .slider-nav__button--next",
-        prevEl: ".reviews__nav .slider-nav__button--prev",
       },
     });
   }
